@@ -38,7 +38,7 @@ xpcc: build/xpcc/Makefile
 RadioHead: build/RadioHead/Makefile
 	$(MAKE) -C build/RadioHead
 	
-SkyFalcon_FMU:
+SkyFalcon_FMU: build/SkyFalcon_FMU/Makefile
 	$(MAKE) -C build/SkyFalcon_FMU
 
 
