@@ -1,3 +1,6 @@
+#SkyFalcon project main build file
+#Author: Valmantas Palikša <walmis@gmail.com> 2016
+
 CMAKE_ECLIPSE_FLAGS=-G"Eclipse CDT4 - Unix Makefiles" -D CMAKE_ECLIPSE_VERSION=4.5
 
 .PHONY: all
