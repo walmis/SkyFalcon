@@ -11,3 +11,6 @@
 	url = https://github.com/walmis/SKYFalcon_FMU.git
 	branch = skyfalcon-stable
 
+[submodule "xpcc"]
+	path = xpcc
+	url = https://github.com/walmis/xpcc.git
