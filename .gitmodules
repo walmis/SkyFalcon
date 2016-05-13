@@ -9,4 +9,4 @@
 [submodule "SKYFalcon_FMU"]
 	path = SKYFalcon_FMU
 	url = ./SKYFalcon_FMU/
-	branch = master
+	branch = skyfalcon-stable
