@@ -5,3 +5,8 @@
 	path = ardupilot
 	url = https://github.com/walmis/ardupilot.git
 	branch = skyfalcon-stable
+
+[submodule "SKYFalcon_FMU"]
+	path = SKYFalcon_FMU
+	url = ./SKYFalcon_FMU/
+	branch = master
