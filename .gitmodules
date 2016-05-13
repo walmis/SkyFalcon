@@ -8,5 +8,5 @@
 
 [submodule "SKYFalcon_FMU"]
 	path = SKYFalcon_FMU
-	url = ./SKYFalcon_FMU/
+	url = https://github.com/walmis/SKYFalcon_FMU.git
 	branch = skyfalcon-stable
