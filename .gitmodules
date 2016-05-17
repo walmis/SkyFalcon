@@ -14,3 +14,6 @@
 [submodule "xpcc"]
 	path = xpcc
 	url = https://github.com/walmis/xpcc.git
+[submodule "opentx-falcon"]
+	path = opentx-falcon
+	url = https://github.com/walmis/opentx-falcon.git

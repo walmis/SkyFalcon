@@ -1,10 +1,11 @@
 #SkyFalcon project main build file
 #Author: Valmantas Palikša <walmis@gmail.com> 2016
 
-CMAKE_ECLIPSE_FLAGS=-G"Eclipse CDT4 - Unix Makefiles" -D CMAKE_ECLIPSE_VERSION=4.5
+CMAKE_ECLIPSE_FLAGS=-G"Eclipse CDT4 - Unix Makefiles" -D CMAKE_ECLIPSE_VERSION=4.5 
+#-DECLIPSE_CDT4_GENERATE_SOURCE_PROJECT=TRUE
 
 .PHONY: all
-all:  xpcc arducopter RadioHead SkyFalcon_FMU
+all:  arducopter SkyFalcon_FMU
 
 .PHONY: clean
 clean: build/xpcc/Makefile build/RadioHead/Makefile build/SkyFalcon_FMU/Makefile 
@@ -17,14 +18,6 @@ clean: build/xpcc/Makefile build/RadioHead/Makefile build/SkyFalcon_FMU/Makefile
 distclean:
 	rm -r build
 	
-build/xpcc/Makefile:
-	@mkdir -p build/xpcc
-	(cd build/xpcc && cmake -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM=stm32f4 -D CHIBI_RTOS=1 ../../xpcc)
-	
-build/RadioHead/Makefile:
-	@mkdir -p build/RadioHead
-	cd build/RadioHead && cmake -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM=cortex-m4 ../../RadioHead
-	
 build/SkyFalcon_FMU/Makefile:
 	@mkdir -p build/SkyFalcon_FMU
 	cd build/SkyFalcon_FMU && cmake -D CMAKE_BUILD_TYPE=MinSizeRel ../../SKYFalcon_FMU/
@@ -32,13 +25,8 @@ build/SkyFalcon_FMU/Makefile:
 arducopter:
 	$(MAKE) -C ardupilot/ArduCopter skyfalcon
 	
-xpcc: build/xpcc/Makefile
-	$(MAKE) -C build/xpcc
 	
-RadioHead: build/RadioHead/Makefile
-	$(MAKE) -C build/RadioHead
-	
-SkyFalcon_FMU: build/SkyFalcon_FMU/Makefile
+SkyFalcon_FMU: arducopter build/SkyFalcon_FMU/Makefile
 	$(MAKE) -C build/SkyFalcon_FMU
 
 
